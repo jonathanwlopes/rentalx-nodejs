@@ -1,0 +1,1 @@
+{"version":3,"file":"ListCategoriesUseCase.js","sourceRoot":"","sources":["../../../../../src/modules/cars/useCases/listCategories/ListCategoriesUseCase.ts"],"names":[],"mappings":";;;AAGA,MAAa,qBAAqB;IAChC,YAAoB,oBAA2C;QAA3C,yBAAoB,GAApB,oBAAoB,CAAuB;IAAG,CAAC;IAEnE,OAAO;QACL,MAAM,UAAU,GAAG,IAAI,CAAC,oBAAoB,CAAC,IAAI,EAAE,CAAA;QAEnD,OAAO,UAAU,CAAA;IACnB,CAAC;CACF;AARD,sDAQC"}
