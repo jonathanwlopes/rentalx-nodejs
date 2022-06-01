@@ -7,7 +7,9 @@
     "sourceMap": true,
     "outDir": "dist",
     "strict": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "lib": ["es2015"]
 }
