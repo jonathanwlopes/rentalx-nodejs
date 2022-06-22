@@ -6,20 +6,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.categoriesRoutes = void 0;
 const express_1 = require("express");
 const multer_1 = __importDefault(require("multer"));
-const createCategory_1 = require("../modules/cars/useCases/createCategory");
-const importCategory_1 = require("../modules/cars/useCases/importCategory");
-const listCategories_1 = require("../modules/cars/useCases/listCategories");
+const CreateCategoryController_1 = require("../modules/cars/useCases/createCategory/CreateCategoryController");
+const ImportCategoryController_1 = require("../modules/cars/useCases/importCategory/ImportCategoryController");
+const ListCategoriesController_1 = require("../modules/cars/useCases/listCategories/ListCategoriesController");
 const upload = (0, multer_1.default)({
     dest: "./tmp",
 });
+const createCategoryController = new CreateCategoryController_1.CreateCategoryController();
+const listCategoryController = new ListCategoriesController_1.ListCategoriesController();
+const importCategoryController = new ImportCategoryController_1.ImportCategoryController();
 exports.categoriesRoutes = (0, express_1.Router)();
-exports.categoriesRoutes.post("/", (request, response) => {
-    return createCategory_1.createCategoryController.handle(request, response);
-});
-exports.categoriesRoutes.get("/list", (request, response) => {
-    return listCategories_1.listCategoryController.handle(request, response);
-});
-exports.categoriesRoutes.post("/import", upload.single("file"), (request, response) => {
-    return importCategory_1.importCategoryController.handle(request, response);
-});
+exports.categoriesRoutes.post("/", createCategoryController.handle);
+exports.categoriesRoutes.get("/list", listCategoryController.handle);
+exports.categoriesRoutes.post("/import", upload.single("file"), importCategoryController.handle);
 //# sourceMappingURL=categories.routes.js.map
